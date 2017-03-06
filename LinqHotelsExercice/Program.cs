@@ -142,6 +142,10 @@ namespace LinqHotelsExercise
             }
             ;
 
+
+
+
+
             //LINQ SIMPLE SELECT
             //var bookingList =
             //    from mybookings in bookings
