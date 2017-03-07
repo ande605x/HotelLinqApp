@@ -216,7 +216,7 @@ namespace LinqHotelsExercise
 
             // 8) List the number of hotels in Roskilde:
 
-            var
+            var numHotelsRoskilde = 
 
 
             // 9) what is the average price of a room:
