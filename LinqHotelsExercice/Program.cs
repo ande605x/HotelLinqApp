@@ -147,23 +147,77 @@ namespace LinqHotelsExercise
 
             // 1) List full details of all Hotels:
 
-            var hotelList =
-                from h in hotels
-                select h;
+            var hotelList = from h in hotels
+                            select h;
+
+            foreach (var h in hotelList) { Console.WriteLine(h); } Console.WriteLine();
+
 
             // 2) List full details of all hotels in Roskilde:
 
+            var hl2 = from h in hotels
+                      where h.Address.Contains("Roskilde")
+                      select h;
+
+            foreach (var h in hl2) { Console.WriteLine(h); } Console.WriteLine();
+
+
             // 3) List the names of all hotels in Roskilde:
+
+            var hl3 = from h in hotels
+                      where h.Address.Contains("Roskilde")
+                      select h.Name;
+
+            foreach (var h in hl3) { Console.WriteLine(h); }
+            Console.WriteLine();
+
+
 
             // 4) List all double rooms with a price below 400 pr night:
 
+            var rl1 = from r in rooms
+                      where r.Types == 'D' && r.Price < 400
+                      select r;
+
+            foreach (var r in rl1) { Console.WriteLine(r); }
+            Console.WriteLine();
+
+
             // 5) List all double or family rooms with a price below 400 pr night in ascending order of price:
+
+            var rl2 = from r in rooms
+                      where (r.Types == 'D' || r.Types=='F') && r.Price < 400
+                      orderby r.Price
+                      select r;
+
+            foreach (var r in rl2) { Console.WriteLine(r); }
+            Console.WriteLine();
+
+
+
 
             // 6) List all hotels that starts with 'P':
 
+            var hl4 = from h in hotels
+                      where h.Name.StartsWith("P")
+                      select h;
+
+            foreach (var h in hl4) { Console.WriteLine(h); }
+            Console.WriteLine();
+
+
+
             // 7) List the number of hotels:
 
+            var numHotels = hotels.Count;
+
+            Console.WriteLine(numHotels+"\n");
+
+
             // 8) List the number of hotels in Roskilde:
+
+            var
+
 
             // 9) what is the average price of a room:
 
